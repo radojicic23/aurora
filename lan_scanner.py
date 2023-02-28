@@ -13,5 +13,5 @@ while True:
         break
 
 # The arping() method in scapy creates a pakcet with and ARP message
-# and sens it to the broadcast mac address ff:ff:ff:ff:ff:ff
+# and sens it to the broadcast mac address ff:ff:ff:ff:ff:ff.
 arp_result = scapy.arping(ip_entered_pattern)
