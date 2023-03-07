@@ -1,5 +1,5 @@
-from lan_scanner import lan_scan
-from port_scanner import port_scan
+from src.lan_scanner import lan_scan
+from src.port_scanner import port_scan
 
 
 print("""____
