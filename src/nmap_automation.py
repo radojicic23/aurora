@@ -24,7 +24,7 @@ _\( )/_            /(_)\      .--'/()\'--.
       / //  \\  \     /(o)\       
        | \__/ |     
 """)
-def anamenu():
+def menu1():
         print("\n\033[1;91m[*] Your output file is in your current directory \033[1;m")
         os.system("pwd")
         print("\033[1;91m[*] Your current directory \033[1;m")
@@ -100,7 +100,7 @@ def baslangic():
             else:
                 os.system("nmap -vv --top-ports="+topport1+" "+option1+" -oN "+option1)
            
-        anamenu()
+    menu1()
     if user_input =="2":
         print("\n[*] Starting Host Discovery...\n")
         time.sleep(1)
@@ -120,7 +120,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -Pn --top-ports="+topport2+" "+option2+" -oN HostD-"+option2+"-output")
            
-        anamenu()
+    menu1()
    
     if user_input== "3":
         print("\n[*] Starting Port(SYN) Scan...\n")
@@ -140,7 +140,7 @@ def baslangic():
                 os.system("nmap -vv -sS --top-ports="+defaultportscan+" "+option3+" -oN "+option3+"-output")
             else:
                 os.system("nmap -vv -sS --top-ports="+topport3+" "+option3+" -oN "+option3+"-output")
-        anamenu()
+    menu1()
    
     if user_input== "4":
         print(" Starting Port(TCP) Scan...")
@@ -161,7 +161,7 @@ def baslangic():
                 os.system("nmap -vv –sT --top-ports="+defaultportscan+" "+option4+" -oN TcpScan-"+option4+"-output")
             else:
                 os.system("nmap -vv –sT --top-ports="+topport4+" "+option4+" -oN TcpScan-"+option4+"-output")
-        anamenu()
+    menu1()
    
     if user_input== "5":
         print(" Starting Port(UDP) Scan...")
@@ -183,7 +183,7 @@ def baslangic():
             else:
                 os.system("nmap -vv –sU --top-ports="+topport5+" "+option5+" -oN UdpScan-"+option5+"-output")
            
-        anamenu()
+    menu1()
     if user_input=="6":
         print(" Null scan (-sN)")
         time.sleep(1)
@@ -203,7 +203,7 @@ def baslangic():
                 os.system("nmap -vv -sN --top-ports="+defaultportscan+" "+option6+" -oN NullScan-"+option6+"-output")
             else:
                 os.system("nmap -vv -sN --top-ports="+topport6+" "+option6+" -oN NullScan-"+option6+"-output")
-        anamenu()
+    menu1()
     if user_input=="7":
         print(" FIN scan (-sF)")
         time.sleep(1)
@@ -223,7 +223,7 @@ def baslangic():
                 os.system("nmap -vv -sF --top-ports="+defaultportscan+" "+option7+" -oN FinScan-"+option7+"-output")
             else:
                 os.system("nmap -vv -sF --top-ports="+topport7+" "+option7+" -oN FinScan-"+option7+"-output")
-        anamenu()
+    menu1()
     if user_input=="8":
         print(" Starting OS Analysis and Version Discovery...")
         time.sleep(1)
@@ -244,7 +244,7 @@ def baslangic():
             else:
                 os.system("nmap –sS -sV -O --top-ports="+topport8+" "+option8+" -oN Os-Version-"+option8+"output")
        
-        anamenu()
+    menu1()
     if user_input=="9":
         print(" Starting Nmap Script Engineering...")
         time.sleep(1)
@@ -265,7 +265,7 @@ def baslangic():
             else:
                 os.system("nmap -vv --script=default --top-ports="+topport9+" " +option9+" -oN ScScan-"+option9+"-output")
            
-        anamenu()
+    menu1()
 #firewall bypass
     if user_input=="10":
         print("Starting Nmap Scripting Firewall Bypass ")
@@ -286,7 +286,7 @@ def baslangic():
                 os.system("nmap -vv --script=firewall-bypass --top-ports="+defaultportscan+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
             else :
                 os.system("nmap -vv --script=firewall-bypass --top-ports="+topport10+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
-        anamenu()
+    menu1()
     # TODO: NEXT -->
     if user_input=="11":
         print("Starting Data Length ")
@@ -310,7 +310,7 @@ def baslangic():
             else:
                 os.system("nmap ---data-string +"+datalength+" --top-ports="+topport11+" "+option11+" -oN datalength-"+option11+"output")
            
-        anamenu()
+    menu1()
     if user_input=="12":
         print("Smash (-ff) ")
         time.sleep(1)
@@ -330,7 +330,7 @@ def baslangic():
                 os.system("nmap -vv -ff --top-ports="+defaultportscan+" " +option12+" -oN "+"ff-"+option12+"-output" )
             else:
                 os.system("nmap -vv -ff --top-ports="+topport12+" " +option12+" -oN "+"ff-"+option12+"-output" )
-        anamenu()
+    menu1()
     if user_input=="13":
         print("Default Vuln Scan ")
         time.sleep(1)
@@ -351,7 +351,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport13+" --script vuln " +option13+" -oN "+"VulnScanDef-"+option13+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="14":
         print("FTP Vuln Scan ")
         time.sleep(1)
@@ -372,7 +372,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport14+" --script ftp* " +option14+" -oN "+"FTPvuln-"+option14+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="15":
         print("SMB Vuln Scan ")
         time.sleep(1)
@@ -393,7 +393,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport15+" --script smb* " +option15+" -oN "+"SMBvuln-"+option15+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="16":
         print("HTTP Vuln Scan ")
         time.sleep(1)
@@ -414,7 +414,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport16+" --script smb* " +option16+" -oN "+"HTTPvuln-"+option16+"-output" )
        
-        anamenu()  
+    menu1()  
     if user_input=="17":
         print("SQL Injection Vuln Scan   ")
         time.sleep(1)
@@ -435,7 +435,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport17+" --script=http-sql-injection " +option17+" -oN "+"SQLvuln-"+option17+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="18":
         print("Stored XSS Vuln Scan ")
         time.sleep(1)
@@ -456,7 +456,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport18+" --script=http-stored-xss.nse " +option18+" -oN "+"StoredXSSvuln-"+option18+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="19":
         print("DOM Based XSS Vuln Scan ")
         time.sleep(1)
@@ -477,7 +477,7 @@ def baslangic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport19+" --script=http-dombased-xss.nse " +option19+" -oN "+"DomBasedXSSvuln-"+option19+"-output" )
        
-        anamenu()
+    menu1()
    
    
     if user_input=="20":
@@ -500,7 +500,7 @@ def baslangic():
             else:
                 os.system("nmap --top-ports="+topport20+" --script dns-brute " +option20+" -oN "+"subdomain_DnsBruteForce-"+option20+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="21":
         print("Subdomain/hostmap-crtsh ")
         time.sleep(1)
@@ -521,7 +521,7 @@ def baslangic():
             else:
                 os.system("nmap --top-ports="+topport21+" --script hostmap-crtsh " +option21+" -oN "+"Subdomain_crtsh-"+option21+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="22":
         print("Whois ")
         time.sleep(1)
@@ -542,7 +542,7 @@ def baslangic():
             else:
                 os.system("nmap --top-ports="+topport22+" --script whois-domain.nse " +option22+" -oN "+"whois-"+option22+"-output" )
        
-        anamenu()
+    menu1()
     if user_input=="0":
         print("\n\033[1;91m[*] Exiting...\033[1;m") 
         sys.exit()
