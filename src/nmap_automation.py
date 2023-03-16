@@ -31,14 +31,14 @@ def menu1():
         print("\n\033[1;91m[1] ~ Back to Main Menu \n [2] ~ Exit\n \033[1;m")
         option = input("root""\033[1;91m@aurora:~$\033[1;m ")
         if option == "1":
-            baslangic()
+            mainLogic()
         if option == "2":
             print("\033[1;91m[*] Exiting...\033[1;m")
             sys.exit()
         else:
             print("[*] Please enter one of the options in the menu. \n[*] You are directed to the main menu.")
             time.sleep(2)
-            baslangic()
+            mainLogic()
 def sigint_handler(signum, frame):
     os.system("clear")
     print ("CTRL+C detected!")
@@ -76,7 +76,7 @@ def menu():
 [22] ~ Whois
 [0] ~ Exit
 """)
-def baslangic():
+def mainLogic():
     menu()
     print("[+] Enter one of the options.\n")
     user_input = input("root""\033[1;91m@aurora:~$\033[1;m ")
@@ -91,7 +91,7 @@ def baslangic():
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(3)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport1=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             print("\n")
@@ -112,7 +112,7 @@ def baslangic():
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport2=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport2:
@@ -133,7 +133,7 @@ def baslangic():
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport3=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport3:
@@ -154,7 +154,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport4=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport4:
@@ -175,7 +175,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport5=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport5:
@@ -196,7 +196,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport6=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport6:
@@ -216,7 +216,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport7=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport7:
@@ -236,7 +236,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport8=input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport8:
@@ -257,7 +257,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport9= input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport9:
@@ -279,7 +279,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport10= input("Top Port? Example: 10 or 50, Default 50:  ")
             if not topport10:
@@ -300,7 +300,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport11= input("Top Port? Example 10 or 50, Default 50:  ")
             print("Append random data to sent packets")
@@ -323,7 +323,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport12= input("Top Port? Example 10 or 50, Default 50:  ")
             if not topport12:
@@ -343,7 +343,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport13=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport13:
@@ -364,7 +364,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport14=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport14:
@@ -385,7 +385,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport15=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport15:
@@ -406,7 +406,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport16=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport16:
@@ -427,7 +427,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport17=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport17:
@@ -448,7 +448,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport18=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport18:
@@ -469,7 +469,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport19=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport19:
@@ -492,7 +492,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport20=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport20:
@@ -513,7 +513,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport21=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport21:
@@ -534,7 +534,7 @@ def baslangic():
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
-            baslangic()
+            mainLogic()
         else:
             topport22=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
             if not topport22:
@@ -549,10 +549,10 @@ def baslangic():
     else:
         print("\n\033[1;91m[*] Please enter one of the options.\033[1;m")
         time.sleep(2)
-        baslangic()
+        mainLogic()
 def rootkontrol():
     if os.geteuid()==0:
-        baslangic()
+        mainLogic()
     else:
         print ("[*] Please run it with root access.")
         sys.exit()
