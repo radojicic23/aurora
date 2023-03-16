@@ -9,6 +9,10 @@ from sys import argv
 from platform import system
 defaultportscan="50";
 
+# TODO -> Wrap up all in function or class so you can access this script from main menu.
+# TODO -> Refactor everything, bad and shit code.
+# TODO -> Update GUI more with more colors and stuff.
+
 print("""____
        /      \         __      _\( )/_
     \  \  ,,  /  /   | /  \ |    /(O)\   
