@@ -4,10 +4,10 @@ import sys
 import os
 import time
 import signal
+
 from time import sleep
 from sys import argv
 from platform import system
-defaultportscan="50";
 
 # TODO -> Wrap up all in function or class so you can access this script from main menu.
 # TODO -> Refactor everything, bad and shit code.
@@ -28,14 +28,19 @@ _\( )/_            /(_)\      .--'/()\'--.
       / //  \\  \     /(o)\       
        | \__/ |     
 """)
+
+defaultportscan="50";
+
 def menu1():
         print("\n\033[1;91m[*] Your output file is in your current directory \033[1;m")
         os.system("pwd")
         print("\033[1;91m[*] Your current directory \033[1;m")
         print("\n\033[1;91m[1] ~ Back to Main Menu \n [2] ~ Exit\n \033[1;m")
         option = input("root""\033[1;91m@aurora:~$\033[1;m ")
+        
         if option == "1":
             mainLogic()
+            
         if option == "2":
             print("\033[1;91m[*] Exiting...\033[1;m")
             sys.exit()
@@ -43,12 +48,15 @@ def menu1():
             print("[*] Please enter one of the options in the menu. \n[*] You are directed to the main menu.")
             time.sleep(2)
             mainLogic()
+
 def sigint_handler(signum, frame):
     os.system("clear")
     print ("~ CTRL+C detected!")
     print("\033[1;91m[*] Exiting...\033[1;m")
     sys.exit()
+    
 signal.signal(signal.SIGINT, sigint_handler)
+
 def menu():
     print("""
 \033[1;91m[*] Default Scan Types \033[1;m
@@ -80,16 +88,20 @@ def menu():
 [22] ~ Whois
 [0] ~ Exit
 """)
+    
 def mainLogic():
+    
     menu()
     print("[+] Enter one of the options.\n")
     user_input = input("root""\033[1;91m@aurora:~$\033[1;m ")
+    
     if user_input == "1":
         print("\n[*] Starting Default Scan...\n")
         time.sleep(2)
         os.system("clear")
-        print("[+] Enter your IP address or example.com")
-        option1 = input("[+] Enter Your Destination: ")
+        print("[+] Enter your IP address or example.com.")
+        option1 = input("[+] Enter here: ")
+        
         if not option1:
             print("\n[*] Please enter IP Address.")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
@@ -99,18 +111,20 @@ def mainLogic():
         else:
             topport1=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             print("\n")
+            
             if not topport1:
                 os.system("nmap -vv --top-ports="+defaultportscan+" "+option1+" -oN "+option1)
             else:
                 os.system("nmap -vv --top-ports="+topport1+" "+option1+" -oN "+option1)
            
     menu1()
+    
     if user_input =="2":
         print("\n[*] Starting Host Discovery...\n")
         time.sleep(1)
         os.system("clear")
         print("[+] Enter your IP address or example.com")
-        option2 = input("[+] Enter Your Destination: ")
+        option2 = input("[+] Enter here: ")
         if not option2:
             print("\n[*] Please enter IP Address.")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
@@ -131,7 +145,7 @@ def mainLogic():
         time.sleep(1)
         os.system("clear")
         print("[+] Enter your IP address or example.com")
-        option3 = input("[+] Enter Your Destination: ")
+        option3 = input("[+] Enter here: ")
         if not option3:
             print("\n[*] Please enter IP Address.")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
@@ -144,6 +158,7 @@ def mainLogic():
                 os.system("nmap -vv -sS --top-ports="+defaultportscan+" "+option3+" -oN "+option3+"-output")
             else:
                 os.system("nmap -vv -sS --top-ports="+topport3+" "+option3+" -oN "+option3+"-output")
+    
     menu1()
    
     if user_input== "4":
@@ -152,7 +167,7 @@ def mainLogic():
         os.system("clear")
         print("[+] Enter your IP address or example.com")
         print("")
-        option4 = input("[+] Enter Your Destination: ")
+        option4 = input("[+] Enter here: ")
         if not option4:
             print("[*] Please Enter IP Address.")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
@@ -165,10 +180,11 @@ def mainLogic():
                 os.system("nmap -vv –sT --top-ports="+defaultportscan+" "+option4+" -oN TcpScan-"+option4+"-output")
             else:
                 os.system("nmap -vv –sT --top-ports="+topport4+" "+option4+" -oN TcpScan-"+option4+"-output")
+    
     menu1()
    
     if user_input== "5":
-        print(" Starting Port(UDP) Scan...")
+        print("[*] Starting Port(UDP) Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -181,15 +197,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport5=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport5=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport5:
                 os.system("nmap -vv –sU --top-ports="+defaultportscan+" "+option5+" -oN UdpScan-"+option5+"-output")
             else:
                 os.system("nmap -vv –sU --top-ports="+topport5+" "+option5+" -oN UdpScan-"+option5+"-output")
            
     menu1()
+    
     if user_input=="6":
-        print(" Null scan (-sN)")
+        print("[*] Null scan (-sN)")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -202,14 +219,15 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport6=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport6=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport6:
                 os.system("nmap -vv -sN --top-ports="+defaultportscan+" "+option6+" -oN NullScan-"+option6+"-output")
             else:
                 os.system("nmap -vv -sN --top-ports="+topport6+" "+option6+" -oN NullScan-"+option6+"-output")
     menu1()
+    
     if user_input=="7":
-        print(" FIN scan (-sF)")
+        print("[*] FIN scan (-sF)")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -222,14 +240,15 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport7=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport7=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport7:
                 os.system("nmap -vv -sF --top-ports="+defaultportscan+" "+option7+" -oN FinScan-"+option7+"-output")
             else:
                 os.system("nmap -vv -sF --top-ports="+topport7+" "+option7+" -oN FinScan-"+option7+"-output")
     menu1()
+    
     if user_input=="8":
-        print(" Starting OS Analysis and Version Discovery...")
+        print("[*] Starting OS Analysis and Version Discovery...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -242,15 +261,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport8=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport8=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport8:
                 os.system("nmap –sS -sV -O --top-ports="+defaultportscan+" "+option8+" -oN Os-Version-"+option8+"output")
             else:
                 os.system("nmap –sS -sV -O --top-ports="+topport8+" "+option8+" -oN Os-Version-"+option8+"output")
        
     menu1()
+    
     if user_input=="9":
-        print(" Starting Nmap Script Engineering...")
+        print("[*] Starting Nmap Script Engineering...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -263,16 +283,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport9= input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport9= input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport9:
                 os.system("nmap -vv --script=default --top-ports="+defaultportscan+" " +option9+" -oN ScScan-"+option9+"-output")
             else:
                 os.system("nmap -vv --script=default --top-ports="+topport9+" " +option9+" -oN ScScan-"+option9+"-output")
            
     menu1()
-#firewall bypass
+
     if user_input=="10":
-        print("Starting Nmap Scripting Firewall Bypass ")
+        print("[*] Starting Nmap Scripting Firewall Bypass...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -285,15 +305,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport10= input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport10= input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport10:
                 os.system("nmap -vv --script=firewall-bypass --top-ports="+defaultportscan+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
             else :
                 os.system("nmap -vv --script=firewall-bypass --top-ports="+topport10+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
+    
     menu1()
-    # TODO: NEXT -->
+
     if user_input=="11":
-        print("Starting Data Length ")
+        print("[*] Starting Data Length...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -306,7 +327,7 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport11= input("Top Port? Example 10 or 50, Default 50:  ")
+            topport11= input("[+] Top Port? Example 10 or 50, Default 50:  ")
             print("Append random data to sent packets")
             datalength=input("Number:")
             if not topport11:
@@ -315,8 +336,9 @@ def mainLogic():
                 os.system("nmap ---data-string +"+datalength+" --top-ports="+topport11+" "+option11+" -oN datalength-"+option11+"output")
            
     menu1()
+    
     if user_input=="12":
-        print("Smash (-ff) ")
+        print("[*] Starting Smash (-ff)...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -329,14 +351,15 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport12= input("Top Port? Example 10 or 50, Default 50:  ")
+            topport12= input("[+] Top Port? Example 10 or 50, Default 50:  ")
             if not topport12:
                 os.system("nmap -vv -ff --top-ports="+defaultportscan+" " +option12+" -oN "+"ff-"+option12+"-output" )
             else:
                 os.system("nmap -vv -ff --top-ports="+topport12+" " +option12+" -oN "+"ff-"+option12+"-output" )
     menu1()
+    
     if user_input=="13":
-        print("Default Vuln Scan ")
+        print("[*] Starting Default Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -349,15 +372,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport13=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport13=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport13:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script vuln " +option13+" -oN "+"VulnScanDef-"+option13+"-output" )
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport13+" --script vuln " +option13+" -oN "+"VulnScanDef-"+option13+"-output" )
        
     menu1()
+    
     if user_input=="14":
-        print("FTP Vuln Scan ")
+        print("[*] Starting FTP Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -370,15 +394,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport14=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport14=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport14:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script ftp* " +option14+" -oN "+"FTPvuln-"+option14+"-output" )
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport14+" --script ftp* " +option14+" -oN "+"FTPvuln-"+option14+"-output" )
        
     menu1()
+    
     if user_input=="15":
-        print("SMB Vuln Scan ")
+        print("[*] Starting SMB Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -391,15 +416,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport15=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport15=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport15:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script smb* " +option15+" -oN "+"SMBvuln-"+option15+"-output" )
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport15+" --script smb* " +option15+" -oN "+"SMBvuln-"+option15+"-output" )
        
     menu1()
+    
     if user_input=="16":
-        print("HTTP Vuln Scan ")
+        print("[*] Starting HTTP Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -412,15 +438,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport16=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport16=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport16:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script smb* " +option16+" -oN "+"HTTPvuln-"+option16+"-output" )
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport16+" --script smb* " +option16+" -oN "+"HTTPvuln-"+option16+"-output" )
        
     menu1()  
+    
     if user_input=="17":
-        print("SQL Injection Vuln Scan   ")
+        print("[*] Starting SQL Injection Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print("   Enter your IP address or example.com")
@@ -433,15 +460,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport17=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport17=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport17:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script=http-sql-injection " +option17+" -oN "+"SQLvuln-"+option17+"-output" )
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport17+" --script=http-sql-injection " +option17+" -oN "+"SQLvuln-"+option17+"-output" )
        
     menu1()
+    
     if user_input=="18":
-        print("Stored XSS Vuln Scan ")
+        print("[*] Starting Stored XSS Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -454,15 +482,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport18=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport18=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport18:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script=http-stored-xss.nse " +option18+" -oN "+"StoredXSSvuln-"+option18+"-output" )
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+topport18+" --script=http-stored-xss.nse " +option18+" -oN "+"StoredXSSvuln-"+option18+"-output" )
        
     menu1()
+    
     if user_input=="19":
-        print("DOM Based XSS Vuln Scan ")
+        print("[*] Starting DOM Based XSS Vuln Scan...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -475,7 +504,7 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport19=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport19=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport19:
                 os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script=http-dombased-xss.nse " +option19+" -oN "+"DomBasedXSSvuln-"+option19+"-output" )
             else:
@@ -483,9 +512,8 @@ def mainLogic():
        
     menu1()
    
-   
     if user_input=="20":
-        print("DNS Brute-force Hostnames ")
+        print("[*] Starting DNS Brute-force Hostnames...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -498,15 +526,16 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport20=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport20=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport20:
                 os.system("nmap --top-ports="+defaultportscan+" --script dns-brute " +option20+" -oN "+"subdomain_DnsBruteForce-"+option20+"-output" )
             else:
                 os.system("nmap --top-ports="+topport20+" --script dns-brute " +option20+" -oN "+"subdomain_DnsBruteForce-"+option20+"-output" )
-       
+                   
     menu1()
+    
     if user_input=="21":
-        print("Subdomain/hostmap-crtsh ")
+        print("[*] Starting Subdomain/hostmap-crtsh...")
         time.sleep(1)
         os.system("clear")
         print(" Enter your IP address or example.com")
@@ -519,13 +548,14 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport21=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport21=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport21:
                 os.system("nmap --top-ports="+defaultportscan+" --script hostmap-crtsh " +option21+" -oN "+"Subdomain_crtsh-"+option21+"-output" )
             else:
                 os.system("nmap --top-ports="+topport21+" --script hostmap-crtsh " +option21+" -oN "+"Subdomain_crtsh-"+option21+"-output" )
-       
+                
     menu1()
+    
     if user_input=="22":
         print("Whois ")
         time.sleep(1)
@@ -540,13 +570,14 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport22=input("\033[92mTop Port? Example 10 or 50, Default 50:\033[0m;  ")
+            topport22=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport22:
                 os.system("nmap --top-ports="+defaultportscan+" --script whois-domain.nse " +option22+" -oN "+"whois-"+option22+"-output" )
             else:
                 os.system("nmap --top-ports="+topport22+" --script whois-domain.nse " +option22+" -oN "+"whois-"+option22+"-output" )
-       
+                
     menu1()
+    
     if user_input=="0":
         print("\n\033[1;91m[*] Exiting...\033[1;m") 
         sys.exit()
@@ -554,10 +585,12 @@ def mainLogic():
         print("\n\033[1;91m[*] Please enter one of the options.\033[1;m")
         time.sleep(2)
         mainLogic()
-def rootkontrol():
+        
+        
+def rootcontrol():
     if os.geteuid()==0:
         mainLogic()
     else:
         print ("[*] Please run it with root access.")
         sys.exit()
-rootkontrol()
+rootcontrol()
