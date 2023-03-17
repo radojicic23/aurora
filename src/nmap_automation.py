@@ -45,7 +45,7 @@ def menu1():
             mainLogic()
 def sigint_handler(signum, frame):
     os.system("clear")
-    print ("CTRL+C detected!")
+    print ("~ CTRL+C detected!")
     print("\033[1;91m[*] Exiting...\033[1;m")
     sys.exit()
 signal.signal(signal.SIGINT, sigint_handler)
@@ -118,7 +118,7 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport2=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport2=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport2:
                 os.system("nmap -vv -Pn --top-ports="+defaultportscan+" "+option2+" -oN HostD-"+option2+"-output")
             else:
@@ -139,7 +139,7 @@ def mainLogic():
             os.system("clear")
             mainLogic()
         else:
-            topport3=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport3=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport3:
                 os.system("nmap -vv -sS --top-ports="+defaultportscan+" "+option3+" -oN "+option3+"-output")
             else:
@@ -147,20 +147,20 @@ def mainLogic():
     menu1()
    
     if user_input== "4":
-        print(" Starting Port(TCP) Scan...")
+        print("\n[*] Starting Port(TCP) Scan...\n")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option4 = input("     Enter Your Destination: ")
+        option4 = input("[+] Enter Your Destination: ")
         if not option4:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address.")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
         else:
-            topport4=input("Top Port? Example: 10 or 50, Default 50:  ")
+            topport4=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport4:
                 os.system("nmap -vv –sT --top-ports="+defaultportscan+" "+option4+" -oN TcpScan-"+option4+"-output")
             else:
