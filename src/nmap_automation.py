@@ -31,6 +31,7 @@ _\( )/_            /(_)\      .--'/()\'--.
 
 defaultportscan="50";
 
+
 def menu1():
         print("\n\033[1;91m[*] Your output file is in your current directory \033[1;m")
         os.system("pwd")
@@ -49,13 +50,16 @@ def menu1():
             time.sleep(2)
             mainLogic()
 
+
 def sigint_handler(signum, frame):
     os.system("clear")
-    print ("~ CTRL+C detected!")
+    print("~ CTRL+C detected!")
     print("\033[1;91m[*] Exiting...\033[1;m")
     sys.exit()
-    
+
+
 signal.signal(signal.SIGINT, sigint_handler)
+
 
 def menu():
     print("""
@@ -88,7 +92,8 @@ def menu():
 [22] ~ Whois
 [0] ~ Exit
 """)
-    
+
+
 def mainLogic():
     
     menu()
@@ -103,7 +108,7 @@ def mainLogic():
         option1 = input("[+] Enter here: ")
         
         if not option1:
-            print("\n[*] Please enter IP Address.")
+            print("\n[*] Please enter IP Address!")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(3)
             os.system("clear")
@@ -125,8 +130,9 @@ def mainLogic():
         os.system("clear")
         print("[+] Enter your IP address or example.com")
         option2 = input("[+] Enter here: ")
+
         if not option2:
-            print("\n[*] Please enter IP Address.")
+            print("\n[*] Please enter IP Address!")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -146,8 +152,9 @@ def mainLogic():
         os.system("clear")
         print("[+] Enter your IP address or example.com")
         option3 = input("[+] Enter here: ")
+        
         if not option3:
-            print("\n[*] Please enter IP Address.")
+            print("\n[*] Please enter IP Address!")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -168,8 +175,9 @@ def mainLogic():
         print("[+] Enter your IP address or example.com")
         print("")
         option4 = input("[+] Enter here: ")
+        
         if not option4:
-            print("[*] Please Enter IP Address.")
+            print("[*] Please Enter IP Address!")
             print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -187,12 +195,13 @@ def mainLogic():
         print("[*] Starting Port(UDP) Scan...")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option5 = input("     Enter Your Destination: ")
+        option5 = input("[+] Enter Here: ")
+        
         if not option5:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address!")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
@@ -209,12 +218,12 @@ def mainLogic():
         print("[*] Null scan (-sN)")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option6 = input("     Enter Your Destination: ")
+        option6 = input("[+] Enter Here: ")
         if not option6:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address!")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
@@ -224,18 +233,20 @@ def mainLogic():
                 os.system("nmap -vv -sN --top-ports="+defaultportscan+" "+option6+" -oN NullScan-"+option6+"-output")
             else:
                 os.system("nmap -vv -sN --top-ports="+topport6+" "+option6+" -oN NullScan-"+option6+"-output")
+                
     menu1()
     
     if user_input=="7":
         print("[*] FIN scan (-sF)")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option7 = input("     Enter Your Destination: ")
+        option7 = input("[+] Enter Here: ")
+        
         if not option7:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address!")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
@@ -245,18 +256,20 @@ def mainLogic():
                 os.system("nmap -vv -sF --top-ports="+defaultportscan+" "+option7+" -oN FinScan-"+option7+"-output")
             else:
                 os.system("nmap -vv -sF --top-ports="+topport7+" "+option7+" -oN FinScan-"+option7+"-output")
+                
     menu1()
     
     if user_input=="8":
         print("[*] Starting OS Analysis and Version Discovery...")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option8 = input("     Enter Your Destination: ")
+        option8 = input("[+] Enter Here: ")
+        
         if not option8:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address!")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
@@ -273,12 +286,13 @@ def mainLogic():
         print("[*] Starting Nmap Script Engineering...")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option9 = input("     Enter Your Destination: ")
+        option9 = input("[+] Enter Here: ")
+        
         if not option9:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address!")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
@@ -295,12 +309,13 @@ def mainLogic():
         print("[*] Starting Nmap Scripting Firewall Bypass...")
         time.sleep(1)
         os.system("clear")
-        print(" Enter your IP address or example.com")
+        print("[+] Enter your IP address or example.com")
         print("")
-        option10 = input("     Enter Your Destination: ")
+        option10 = input("[+] Enter Here: ")
+        
         if not option10:
-            print("Pls Enter Target")
-            print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
+            print("[*] Please Enter IP Address!")
+            print("\033[1;91m[*] You are grounded! Exiting to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
             mainLogic()
@@ -312,7 +327,7 @@ def mainLogic():
                 os.system("nmap -vv --script=firewall-bypass --top-ports="+topport10+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
     
     menu1()
-
+    # TODO -> NEXT
     if user_input=="11":
         print("[*] Starting Data Length...")
         time.sleep(1)
@@ -356,6 +371,7 @@ def mainLogic():
                 os.system("nmap -vv -ff --top-ports="+defaultportscan+" " +option12+" -oN "+"ff-"+option12+"-output" )
             else:
                 os.system("nmap -vv -ff --top-ports="+topport12+" " +option12+" -oN "+"ff-"+option12+"-output" )
+
     menu1()
     
     if user_input=="13":
@@ -587,10 +603,11 @@ def mainLogic():
         mainLogic()
         
         
-def rootcontrol():
+def root_control():
     if os.geteuid()==0:
         mainLogic()
     else:
-        print ("[*] Please run it with root access.")
+        print("[*] Please run it with root access.")
         sys.exit()
-rootcontrol()
+        
+root_control()
