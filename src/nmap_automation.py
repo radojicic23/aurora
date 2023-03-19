@@ -36,7 +36,7 @@ def menu1():
         print("\n\033[1;91m[*] Your output file is in your current directory \033[1;m")
         os.system("pwd")
         print("\033[1;91m[*] Your current directory \033[1;m")
-        print("\n\033[1;91m[1] ~ Back to Main Menu \n [2] ~ Exit\n \033[1;m")
+        print("\n\033[1;91m[1] ~ Back to Main Menu \n[2] ~ Exit\n \033[1;m")
         option = input("root""\033[1;91m@aurora:~$\033[1;m ")
         
         if option == "1":
@@ -46,7 +46,7 @@ def menu1():
             print("\033[1;91m[*] Exiting...\033[1;m")
             sys.exit()
         else:
-            print("[*] Please enter one of the options in the menu. \n[*] You are directed to the main menu.")
+            print("[*] Please enter one of the options in the menu. \n[*] Exiting to the main menu.")
             time.sleep(2)
             mainLogic()
 
@@ -118,9 +118,9 @@ def mainLogic():
             print("\n")
             
             if not topport1:
-                os.system("nmap -vv --top-ports="+defaultportscan+" "+option1+" -oN "+option1)
+                os.system("nmap -vv --top-ports=" + defaultportscan + " " + option1 + " -oN " + option1)
             else:
-                os.system("nmap -vv --top-ports="+topport1+" "+option1+" -oN "+option1)
+                os.system("nmap -vv --top-ports=" + topport1 + " " + option1 + " -oN " + option1)
            
     menu1()
     
@@ -140,9 +140,9 @@ def mainLogic():
         else:
             topport2=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport2:
-                os.system("nmap -vv -Pn --top-ports="+defaultportscan+" "+option2+" -oN HostD-"+option2+"-output")
+                os.system("nmap -vv -Pn --top-ports=" + defaultportscan + " " + option2 + " -oN HostD-" + option2 + "-output")
             else:
-                os.system("nmap -vv -Pn --top-ports="+topport2+" "+option2+" -oN HostD-"+option2+"-output")
+                os.system("nmap -vv -Pn --top-ports=" + topport2 + " " + option2 + " -oN HostD-" + option2 + "-output")
            
     menu1()
    
@@ -162,9 +162,9 @@ def mainLogic():
         else:
             topport3=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport3:
-                os.system("nmap -vv -sS --top-ports="+defaultportscan+" "+option3+" -oN "+option3+"-output")
+                os.system("nmap -vv -sS --top-ports=" + defaultportscan + " " + option3 + " -oN " + option3 + "-output")
             else:
-                os.system("nmap -vv -sS --top-ports="+topport3+" "+option3+" -oN "+option3+"-output")
+                os.system("nmap -vv -sS --top-ports=" + topport3 + " " + option3 + " -oN " + option3 + "-output")
     
     menu1()
    
@@ -185,9 +185,9 @@ def mainLogic():
         else:
             topport4=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport4:
-                os.system("nmap -vv –sT --top-ports="+defaultportscan+" "+option4+" -oN TcpScan-"+option4+"-output")
+                os.system("nmap -vv –sT --top-ports=" + defaultportscan + " " + option4 + " -oN TcpScan-" + option4 + "-output")
             else:
-                os.system("nmap -vv –sT --top-ports="+topport4+" "+option4+" -oN TcpScan-"+option4+"-output")
+                os.system("nmap -vv –sT --top-ports=" + topport4 + " " + option4 + " -oN TcpScan-" + option4 + "-output")
     
     menu1()
    
@@ -208,9 +208,9 @@ def mainLogic():
         else:
             topport5=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport5:
-                os.system("nmap -vv –sU --top-ports="+defaultportscan+" "+option5+" -oN UdpScan-"+option5+"-output")
+                os.system("nmap -vv –sU --top-ports=" + defaultportscan + " " + option5 + " -oN UdpScan-" + option5 + "-output")
             else:
-                os.system("nmap -vv –sU --top-ports="+topport5+" "+option5+" -oN UdpScan-"+option5+"-output")
+                os.system("nmap -vv –sU --top-ports=" + topport5 + " " + option5 + " -oN UdpScan-" + option5 + "-output")
            
     menu1()
     
@@ -230,9 +230,9 @@ def mainLogic():
         else:
             topport6=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport6:
-                os.system("nmap -vv -sN --top-ports="+defaultportscan+" "+option6+" -oN NullScan-"+option6+"-output")
+                os.system("nmap -vv -sN --top-ports=" + defaultportscan + " " + option6 + " -oN NullScan-" + option6 + "-output")
             else:
-                os.system("nmap -vv -sN --top-ports="+topport6+" "+option6+" -oN NullScan-"+option6+"-output")
+                os.system("nmap -vv -sN --top-ports=" + topport6 + " " + option6 + " -oN NullScan-" + option6 + "-output")
                 
     menu1()
     
@@ -253,9 +253,9 @@ def mainLogic():
         else:
             topport7=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport7:
-                os.system("nmap -vv -sF --top-ports="+defaultportscan+" "+option7+" -oN FinScan-"+option7+"-output")
+                os.system("nmap -vv -sF --top-ports=" + defaultportscan + " " + option7 + " -oN FinScan-" + option7 + "-output")
             else:
-                os.system("nmap -vv -sF --top-ports="+topport7+" "+option7+" -oN FinScan-"+option7+"-output")
+                os.system("nmap -vv -sF --top-ports=" + topport7 + " " + option7 + " -oN FinScan-" + option7 + "-output")
                 
     menu1()
     
@@ -276,9 +276,9 @@ def mainLogic():
         else:
             topport8=input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport8:
-                os.system("nmap –sS -sV -O --top-ports="+defaultportscan+" "+option8+" -oN Os-Version-"+option8+"output")
+                os.system("nmap –sS -sV -O --top-ports=" + defaultportscan + " " + option8 + " -oN Os-Version-" + option8 + "output")
             else:
-                os.system("nmap –sS -sV -O --top-ports="+topport8+" "+option8+" -oN Os-Version-"+option8+"output")
+                os.system("nmap –sS -sV -O --top-ports=" + topport8 + " " + option8 + " -oN Os-Version-" + option8 + "output")
        
     menu1()
     
@@ -299,9 +299,9 @@ def mainLogic():
         else:
             topport9= input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport9:
-                os.system("nmap -vv --script=default --top-ports="+defaultportscan+" " +option9+" -oN ScScan-"+option9+"-output")
+                os.system("nmap -vv --script=default --top-ports=" + defaultportscan + " " + option9 + " -oN ScScan-" + option9 + "-output")
             else:
-                os.system("nmap -vv --script=default --top-ports="+topport9+" " +option9+" -oN ScScan-"+option9+"-output")
+                os.system("nmap -vv --script=default --top-ports=" + topport9 + " " + option9 + " -oN ScScan-" + option9 + "-output")
            
     menu1()
 
@@ -322,9 +322,9 @@ def mainLogic():
         else:
             topport10= input("[+] Top Port? Example: 10 or 50, Default 50:  ")
             if not topport10:
-                os.system("nmap -vv --script=firewall-bypass --top-ports="+defaultportscan+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
+                os.system("nmap -vv --script=firewall-bypass --top-ports=" + defaultportscan + " " + option10 + " -oN "+"firewallbaypass-" + option10 + "-output")
             else :
-                os.system("nmap -vv --script=firewall-bypass --top-ports="+topport10+" " +option10+" -oN "+"firewallbaypass-"+option10+"-output")
+                os.system("nmap -vv --script=firewall-bypass --top-ports=" + topport10 + " " + option10 + " -oN "+"firewallbaypass-" + option10 + "-output")
     
     menu1()
     # TODO -> NEXT
@@ -334,9 +334,9 @@ def mainLogic():
         os.system("clear")
         print(" Enter your IP address or example.com")
         print("")
-        option11 = input("     Enter Your Destination: ")
+        option11 = input(" Enter Your Destination: ")
         if not option11:
-            print("Pls Enter Target")
+            print(" Please Enter IP Address!")
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -358,9 +358,9 @@ def mainLogic():
         os.system("clear")
         print(" Enter your IP address or example.com")
         print("")
-        option12 = input("     Enter Your Destination: ")
+        option12 = input(" Enter Your Destination: ")
         if not option12:
-            print("Pls Enter Target")
+            print(" Please Enter IP Address!")
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -380,9 +380,9 @@ def mainLogic():
         os.system("clear")
         print(" Enter your IP address or example.com")
         print("")
-        option13 = input("     Enter Your Destination: ")
+        option13 = input(" Enter Your Destination: ")
         if not option13:
-            print("Pls Enter Target")
+            print(" Please Enter Target")
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -402,9 +402,9 @@ def mainLogic():
         os.system("clear")
         print(" Enter your IP address or example.com")
         print("")
-        option14 = input("     Enter Your Destination: ")
+        option14 = input(" Enter Your Destination: ")
         if not option14:
-            print("Pls Enter Target")
+            print(" Pls Enter Target")
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
@@ -424,9 +424,9 @@ def mainLogic():
         os.system("clear")
         print(" Enter your IP address or example.com")
         print("")
-        option15=input("     Enter Your Destination: ")
+        option15=input(" Enter Your Destination: ")
         if not option15:
-            print("Pls Enter Target")
+            print(" Please Enter Target")
             print("\033[1;91mYou are grounded! You go to the main menu...\033[1;m")
             time.sleep(2)
             os.system("clear")
