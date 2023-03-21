@@ -53,7 +53,7 @@ def menu1():
 
 def sigint_handler(signum, frame):
     os.system("clear")
-    print("~ CTRL+C detected!")
+    print("[*] CTRL+C detected!")
     print("\033[1;91m[*] Exiting...\033[1;m")
     sys.exit()
 
@@ -346,9 +346,9 @@ def mainLogic():
             print("[*] Append random data to sent packets.")
             datalength=input("[+] Number:")
             if not topport11:
-                os.system("nmap --data-string "+datalength+" --top-ports="+defaultportscan+" "+option11+" -oN datalength-"+option11+"-output")
+                os.system("nmap --data-string " + datalength + " --top-ports=" + defaultportscan + " " + option11 + " -oN datalength-" + option11 + "-output")
             else:
-                os.system("nmap ---data-string +"+datalength+" --top-ports="+topport11+" "+option11+" -oN datalength-"+option11+"output")
+                os.system("nmap ---data-string +" + datalength + " --top-ports=" + topport11 + " " + option11 + " -oN datalength-" + option11 + "output")
            
     menu1()
     
@@ -368,9 +368,9 @@ def mainLogic():
         else:
             topport12= input("[+] Top Port? Example 10 or 50, Default 50:  ")
             if not topport12:
-                os.system("nmap -vv -ff --top-ports="+defaultportscan+" " +option12+" -oN "+"ff-"+option12+"-output" )
+                os.system("nmap -vv -ff --top-ports=" + defaultportscan + " " + option12 + " -oN " + "ff-" + option12 + "-output" )
             else:
-                os.system("nmap -vv -ff --top-ports="+topport12+" " +option12+" -oN "+"ff-"+option12+"-output" )
+                os.system("nmap -vv -ff --top-ports=" + topport12 + " " + option12 + " -oN " + "ff-" + option12 + "-output" )
 
     menu1()
     
@@ -390,9 +390,9 @@ def mainLogic():
         else:
             topport13=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport13:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script vuln " +option13+" -oN "+"VulnScanDef-"+option13+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script vuln " + option13 + " -oN "+"VulnScanDef-" + option13 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport13+" --script vuln " +option13+" -oN "+"VulnScanDef-"+option13+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport13 + " --script vuln " + option13 + " -oN " + "VulnScanDef-" + option13 + "-output" )
        
     menu1()
     
@@ -412,9 +412,9 @@ def mainLogic():
         else:
             topport14=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport14:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script ftp* " +option14+" -oN "+"FTPvuln-"+option14+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script ftp* " + option14 + " -oN "+"FTPvuln-" + option14 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport14+" --script ftp* " +option14+" -oN "+"FTPvuln-"+option14+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport14 + " --script ftp* " + option14 + " -oN "+"FTPvuln-" + option14 + "-output" )
        
     menu1()
     
@@ -434,9 +434,9 @@ def mainLogic():
         else:
             topport15=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport15:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script smb* " +option15+" -oN "+"SMBvuln-"+option15+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script smb* " + option15 + " -oN "+"SMBvuln-" + option15 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport15+" --script smb* " +option15+" -oN "+"SMBvuln-"+option15+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport15 + " --script smb* " + option15 + " -oN "+"SMBvuln-" + option15 + "-output" )
        
     menu1()
     
@@ -456,9 +456,9 @@ def mainLogic():
         else:
             topport16=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport16:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script smb* " +option16+" -oN "+"HTTPvuln-"+option16+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script smb* " + option16 + " -oN "+"HTTPvuln-" + option16 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport16+" --script smb* " +option16+" -oN "+"HTTPvuln-"+option16+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport16 + " --script smb* " + option16 + " -oN "+"HTTPvuln-" + option16 + "-output" )
        
     menu1()  
     
@@ -478,9 +478,9 @@ def mainLogic():
         else:
             topport17=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport17:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script=http-sql-injection " +option17+" -oN "+"SQLvuln-"+option17+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script=http-sql-injection " + option17 + " -oN "+"SQLvuln-" + option17 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport17+" --script=http-sql-injection " +option17+" -oN "+"SQLvuln-"+option17+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport17 + " --script=http-sql-injection " + option17 + " -oN "+"SQLvuln-" + option17 + "-output" )
        
     menu1()
     
@@ -500,9 +500,9 @@ def mainLogic():
         else:
             topport18=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport18:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script=http-stored-xss.nse " +option18+" -oN "+"StoredXSSvuln-"+option18+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script=http-stored-xss.nse " + option18 + " -oN "+"StoredXSSvuln-" + option18 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport18+" --script=http-stored-xss.nse " +option18+" -oN "+"StoredXSSvuln-"+option18+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport18 + " --script=http-stored-xss.nse " + option18 + " -oN "+"StoredXSSvuln-" + option18 + "-output" )
        
     menu1()
     
@@ -522,9 +522,9 @@ def mainLogic():
         else:
             topport19=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport19:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+defaultportscan+" --script=http-dombased-xss.nse " +option19+" -oN "+"DomBasedXSSvuln-"+option19+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + defaultportscan + " --script=http-dombased-xss.nse " + option19 + " -oN "+"DomBasedXSSvuln-" + option19 + "-output" )
             else:
-                os.system("nmap -vv -sV -ff -Pn --top-ports="+topport19+" --script=http-dombased-xss.nse " +option19+" -oN "+"DomBasedXSSvuln-"+option19+"-output" )
+                os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport19 + " --script=http-dombased-xss.nse " + option19 + " -oN "+"DomBasedXSSvuln-" + option19 + "-output" )
        
     menu1()
    
@@ -544,9 +544,9 @@ def mainLogic():
         else:
             topport20=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport20:
-                os.system("nmap --top-ports="+defaultportscan+" --script dns-brute " +option20+" -oN "+"subdomain_DnsBruteForce-"+option20+"-output" )
+                os.system("nmap --top-ports=" + defaultportscan + " --script dns-brute " + option20 + " -oN "+"subdomain_DnsBruteForce-" + option20 + "-output" )
             else:
-                os.system("nmap --top-ports="+topport20+" --script dns-brute " +option20+" -oN "+"subdomain_DnsBruteForce-"+option20+"-output" )
+                os.system("nmap --top-ports=" + topport20 + " --script dns-brute " + option20 + " -oN "+"subdomain_DnsBruteForce-" + option20 + "-output" )
                    
     menu1()
     
@@ -566,9 +566,9 @@ def mainLogic():
         else:
             topport21=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport21:
-                os.system("nmap --top-ports="+defaultportscan+" --script hostmap-crtsh " +option21+" -oN "+"Subdomain_crtsh-"+option21+"-output" )
+                os.system("nmap --top-ports=" + defaultportscan + " --script hostmap-crtsh " + option21 + " -oN "+"Subdomain_crtsh-" + option21 + "-output" )
             else:
-                os.system("nmap --top-ports="+topport21+" --script hostmap-crtsh " +option21+" -oN "+"Subdomain_crtsh-"+option21+"-output" )
+                os.system("nmap --top-ports=" + topport21 + " --script hostmap-crtsh " + option21 + " -oN "+"Subdomain_crtsh-" + option21 + "-output" )
                 
     menu1()
     
@@ -588,9 +588,9 @@ def mainLogic():
         else:
             topport22=input("[+] Top Port? Example 10 or 50, Default 50: ")
             if not topport22:
-                os.system("nmap --top-ports="+defaultportscan+" --script whois-domain.nse " +option22+" -oN "+"whois-"+option22+"-output" )
+                os.system("nmap --top-ports=" + defaultportscan + " --script whois-domain.nse " + option22 + " -oN "+"whois-" + option22 + "-output" )
             else:
-                os.system("nmap --top-ports="+topport22+" --script whois-domain.nse " +option22+" -oN "+"whois-"+option22+"-output" )
+                os.system("nmap --top-ports=" + topport22 + " --script whois-domain.nse " + option22 + " -oN "+"whois-" + option22 + "-output" )
                 
     menu1()
     
