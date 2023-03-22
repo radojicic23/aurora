@@ -10,8 +10,6 @@ from sys import argv
 from platform import system
 
 # TODO -> Wrap up all in function or class so you can access this script from main menu.
-# TODO -> Refactor everything, bad and shit code.
-# TODO -> Update GUI more with more colors and stuff.
 
 print("""____
        /      \         __      _\( )/_
@@ -97,7 +95,7 @@ def menu():
 def mainLogic():
     
     menu()
-    print("[+] Enter one of the options.\n")
+    print("[*] Enter one of the options.\n")
     user_input = input("root""\033[1;91m@aurora:~$\033[1;m ")
     
     if user_input == "1":
@@ -146,7 +144,7 @@ def mainLogic():
            
     menu1()
    
-    if user_input== "3":
+    if user_input == "3":
         print("\n[*] Starting Port(SYN) Scan...\n")
         time.sleep(1)
         os.system("clear")
@@ -168,7 +166,7 @@ def mainLogic():
     
     menu1()
    
-    if user_input== "4":
+    if user_input == "4":
         print("\n[*] Starting Port(TCP) Scan...\n")
         time.sleep(1)
         os.system("clear")
@@ -191,7 +189,7 @@ def mainLogic():
     
     menu1()
    
-    if user_input== "5":
+    if user_input == "5":
         print("[*] Starting Port(UDP) Scan...")
         time.sleep(1)
         os.system("clear")
@@ -214,7 +212,7 @@ def mainLogic():
            
     menu1()
     
-    if user_input=="6":
+    if user_input == "6":
         print("[*] Null scan (-sN)")
         time.sleep(1)
         os.system("clear")
@@ -236,7 +234,7 @@ def mainLogic():
                 
     menu1()
     
-    if user_input=="7":
+    if user_input == "7":
         print("[*] FIN scan (-sF)")
         time.sleep(1)
         os.system("clear")
@@ -259,7 +257,7 @@ def mainLogic():
                 
     menu1()
     
-    if user_input=="8":
+    if user_input == "8":
         print("[*] Starting OS Analysis and Version Discovery...")
         time.sleep(1)
         os.system("clear")
@@ -282,7 +280,7 @@ def mainLogic():
        
     menu1()
     
-    if user_input=="9":
+    if user_input == "9":
         print("[*] Starting Nmap Script Engineering...")
         time.sleep(1)
         os.system("clear")
@@ -305,7 +303,7 @@ def mainLogic():
            
     menu1()
 
-    if user_input=="10":
+    if user_input == "10":
         print("[*] Starting Nmap Scripting Firewall Bypass...")
         time.sleep(1)
         os.system("clear")
@@ -328,7 +326,7 @@ def mainLogic():
     
     menu1()
     # TODO -> NEXT
-    if user_input=="11":
+    if user_input == "11":
         print("[*] Starting Data Length...")
         time.sleep(1)
         os.system("clear")
@@ -352,7 +350,7 @@ def mainLogic():
            
     menu1()
     
-    if user_input=="12":
+    if user_input == "12":
         print("[*] Starting Smash (-ff)...")
         time.sleep(1)
         os.system("clear")
@@ -374,7 +372,7 @@ def mainLogic():
 
     menu1()
     
-    if user_input=="13":
+    if user_input == "13":
         print("[*] Starting Default Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -396,7 +394,7 @@ def mainLogic():
        
     menu1()
     
-    if user_input=="14":
+    if user_input == "14":
         print("[*] Starting FTP Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -418,7 +416,7 @@ def mainLogic():
        
     menu1()
     
-    if user_input=="15":
+    if user_input == "15":
         print("[*] Starting SMB Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -440,7 +438,7 @@ def mainLogic():
        
     menu1()
     
-    if user_input=="16":
+    if user_input == "16":
         print("[*] Starting HTTP Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -462,7 +460,7 @@ def mainLogic():
        
     menu1()  
     
-    if user_input=="17":
+    if user_input == "17":
         print("[*] Starting SQL Injection Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -484,7 +482,7 @@ def mainLogic():
        
     menu1()
     
-    if user_input=="18":
+    if user_input == "18":
         print("[*] Starting Stored XSS Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -506,7 +504,7 @@ def mainLogic():
        
     menu1()
     
-    if user_input=="19":
+    if user_input == "19":
         print("[*] Starting DOM Based XSS Vuln Scan...")
         time.sleep(1)
         os.system("clear")
@@ -528,7 +526,7 @@ def mainLogic():
        
     menu1()
    
-    if user_input=="20":
+    if user_input == "20":
         print("[*] Starting DNS Brute-force Hostnames...")
         time.sleep(1)
         os.system("clear")
@@ -550,7 +548,7 @@ def mainLogic():
                    
     menu1()
     
-    if user_input=="21":
+    if user_input == "21":
         print("[*] Starting Subdomain/hostmap-crtsh...")
         time.sleep(1)
         os.system("clear")
@@ -572,7 +570,7 @@ def mainLogic():
                 
     menu1()
     
-    if user_input=="22":
+    if user_input == "22":
         print("[*] Who is this starting... ")
         time.sleep(1)
         os.system("clear")
@@ -594,7 +592,7 @@ def mainLogic():
                 
     menu1()
     
-    if user_input=="0":
+    if user_input == "0":
         print("\n\033[1;91m[*] Exiting...\033[1;m") 
         sys.exit()
     else:
@@ -604,7 +602,7 @@ def mainLogic():
         
         
 def root_control():
-    if os.geteuid()==0:
+    if os.geteuid() == 0:
         mainLogic()
     else:
         print("[*] Please run it with root access.")
