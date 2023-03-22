@@ -120,7 +120,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv --top-ports=" + topport1 + " " + option1 + " -oN " + option1)
            
-    menu1()
+        menu1()
     
     if user_input =="2":
         print("\n[*] Starting Host Discovery...\n")
@@ -142,7 +142,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -Pn --top-ports=" + topport2 + " " + option2 + " -oN HostD-" + option2 + "-output")
            
-    menu1()
+        menu1()
    
     if user_input == "3":
         print("\n[*] Starting Port(SYN) Scan...\n")
@@ -164,7 +164,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sS --top-ports=" + topport3 + " " + option3 + " -oN " + option3 + "-output")
     
-    menu1()
+        menu1()
    
     if user_input == "4":
         print("\n[*] Starting Port(TCP) Scan...\n")
@@ -187,7 +187,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv –sT --top-ports=" + topport4 + " " + option4 + " -oN TcpScan-" + option4 + "-output")
     
-    menu1()
+        menu1()
    
     if user_input == "5":
         print("[*] Starting Port(UDP) Scan...")
@@ -210,7 +210,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv –sU --top-ports=" + topport5 + " " + option5 + " -oN UdpScan-" + option5 + "-output")
            
-    menu1()
+        menu1()
     
     if user_input == "6":
         print("[*] Null scan (-sN)")
@@ -232,7 +232,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sN --top-ports=" + topport6 + " " + option6 + " -oN NullScan-" + option6 + "-output")
                 
-    menu1()
+        menu1()
     
     if user_input == "7":
         print("[*] FIN scan (-sF)")
@@ -255,7 +255,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sF --top-ports=" + topport7 + " " + option7 + " -oN FinScan-" + option7 + "-output")
                 
-    menu1()
+        menu1()
     
     if user_input == "8":
         print("[*] Starting OS Analysis and Version Discovery...")
@@ -278,7 +278,7 @@ def mainLogic():
             else:
                 os.system("nmap –sS -sV -O --top-ports=" + topport8 + " " + option8 + " -oN Os-Version-" + option8 + "output")
        
-    menu1()
+        menu1()
     
     if user_input == "9":
         print("[*] Starting Nmap Script Engineering...")
@@ -301,7 +301,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv --script=default --top-ports=" + topport9 + " " + option9 + " -oN ScScan-" + option9 + "-output")
            
-    menu1()
+        menu1()
 
     if user_input == "10":
         print("[*] Starting Nmap Scripting Firewall Bypass...")
@@ -324,8 +324,8 @@ def mainLogic():
             else :
                 os.system("nmap -vv --script=firewall-bypass --top-ports=" + topport10 + " " + option10 + " -oN "+"firewallbaypass-" + option10 + "-output")
     
-    menu1()
-    # TODO -> NEXT
+        menu1()
+    
     if user_input == "11":
         print("[*] Starting Data Length...")
         time.sleep(1)
@@ -348,7 +348,7 @@ def mainLogic():
             else:
                 os.system("nmap ---data-string +" + datalength + " --top-ports=" + topport11 + " " + option11 + " -oN datalength-" + option11 + "output")
            
-    menu1()
+        menu1()
     
     if user_input == "12":
         print("[*] Starting Smash (-ff)...")
@@ -370,7 +370,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -ff --top-ports=" + topport12 + " " + option12 + " -oN " + "ff-" + option12 + "-output" )
 
-    menu1()
+        menu1()
     
     if user_input == "13":
         print("[*] Starting Default Vuln Scan...")
@@ -392,7 +392,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport13 + " --script vuln " + option13 + " -oN " + "VulnScanDef-" + option13 + "-output" )
        
-    menu1()
+        menu1()
     
     if user_input == "14":
         print("[*] Starting FTP Vuln Scan...")
@@ -414,7 +414,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport14 + " --script ftp* " + option14 + " -oN "+"FTPvuln-" + option14 + "-output" )
        
-    menu1()
+        menu1()
     
     if user_input == "15":
         print("[*] Starting SMB Vuln Scan...")
@@ -436,7 +436,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport15 + " --script smb* " + option15 + " -oN "+"SMBvuln-" + option15 + "-output" )
        
-    menu1()
+        menu1()
     
     if user_input == "16":
         print("[*] Starting HTTP Vuln Scan...")
@@ -458,7 +458,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport16 + " --script smb* " + option16 + " -oN "+"HTTPvuln-" + option16 + "-output" )
        
-    menu1()  
+        menu1()  
     
     if user_input == "17":
         print("[*] Starting SQL Injection Vuln Scan...")
@@ -480,7 +480,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport17 + " --script=http-sql-injection " + option17 + " -oN "+"SQLvuln-" + option17 + "-output" )
        
-    menu1()
+        menu1()
     
     if user_input == "18":
         print("[*] Starting Stored XSS Vuln Scan...")
@@ -502,7 +502,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport18 + " --script=http-stored-xss.nse " + option18 + " -oN "+"StoredXSSvuln-" + option18 + "-output" )
        
-    menu1()
+        menu1()
     
     if user_input == "19":
         print("[*] Starting DOM Based XSS Vuln Scan...")
@@ -524,7 +524,7 @@ def mainLogic():
             else:
                 os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport19 + " --script=http-dombased-xss.nse " + option19 + " -oN "+"DomBasedXSSvuln-" + option19 + "-output" )
        
-    menu1()
+        menu1()
    
     if user_input == "20":
         print("[*] Starting DNS Brute-force Hostnames...")
@@ -546,7 +546,7 @@ def mainLogic():
             else:
                 os.system("nmap --top-ports=" + topport20 + " --script dns-brute " + option20 + " -oN "+"subdomain_DnsBruteForce-" + option20 + "-output" )
                    
-    menu1()
+        menu1()
     
     if user_input == "21":
         print("[*] Starting Subdomain/hostmap-crtsh...")
@@ -568,7 +568,7 @@ def mainLogic():
             else:
                 os.system("nmap --top-ports=" + topport21 + " --script hostmap-crtsh " + option21 + " -oN "+"Subdomain_crtsh-" + option21 + "-output" )
                 
-    menu1()
+        menu1()
     
     if user_input == "22":
         print("[*] Who is this starting... ")
@@ -590,7 +590,7 @@ def mainLogic():
             else:
                 os.system("nmap --top-ports=" + topport22 + " --script whois-domain.nse " + option22 + " -oN "+"whois-" + option22 + "-output" )
                 
-    menu1()
+        menu1()
     
     if user_input == "0":
         print("\n\033[1;91m[*] Exiting...\033[1;m") 
