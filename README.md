@@ -26,4 +26,4 @@ $ sudo python3 main.py
 ```
 
 ## Disclaimer⚠️
-- This tool is for educational purposes only. Do not use against any network that you don't own or have authorization to test.
+THIS TOOL IS FOR EDUCATIONAL PURPOSES ONLY. DO NOT USE AGAINST ANY NETWORK THAT YOU DON'T OWN OR HAVE AUTHORIZATION TO TEST!
