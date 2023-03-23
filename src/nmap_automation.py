@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 import sys
 import os
 import time
@@ -10,7 +8,9 @@ from sys import argv
 from platform import system
 
 
-print("""____
+def nmap_script():
+
+    print("""____
        /      \         __      _\( )/_
     \  \  ,,  /  /   | /  \ |    /(O)\   
      '-.`\()/`.-'   \_\\  //_/     _.._   _\(o)/_   
@@ -26,72 +26,71 @@ _\( )/_            /(_)\      .--'/()\'--.
        | \__/ |     
 """)
 
-defaultportscan="50";
+    defaultportscan="50";
 
 
-def menu1():
-    print("\n\033[1;91m[*] Your output file is in your current directory \033[1;m")
-    os.system("pwd")
-    print("\033[1;91m[*] Your current directory \033[1;m")
-    print("\n\033[1;91m[1] ~ Back to Main Menu \n[2] ~ Exit\n \033[1;m")
-    option = input("root""\033[1;91m@aurora:~$\033[1;m ")
-    
-    if option == "1":
-        main()
+    def menu1():
+        print("\n\033[1;91m[*] Your output file is in your current directory \033[1;m")
+        os.system("pwd")
+        print("\033[1;91m[*] Your current directory \033[1;m")
+        print("\n\033[1;91m[1] ~ Back to Main Menu \n[2] ~ Exit\n \033[1;m")
+        option = input("root""\033[1;91m@aurora:~$\033[1;m ")
         
-    if option == "2":
+        if option == "1":
+            mainLogic()
+            
+        if option == "2":
+            print("\033[1;91m[*] Exiting...\033[1;m")
+            sys.exit()
+        else:
+            print("[*] Please enter one of the options in the menu. \n[*] Exiting to the main menu.")
+            time.sleep(2)
+            mainLogic()
+
+
+    def sigint_handler(signum, frame):
+        os.system("clear")
+        print("[*] CTRL+C detected!")
         print("\033[1;91m[*] Exiting...\033[1;m")
         sys.exit()
-    else:
-        print("[*] Please enter one of the options in the menu. \n[*] Exiting to the main menu.")
-        time.sleep(2)
-        main()
 
 
-def sigint_handler(signum, frame):
-    os.system("clear")
-    print("[*] CTRL+C detected!")
-    print("\033[1;91m[*] Exiting...\033[1;m")
-    sys.exit()
+    signal.signal(signal.SIGINT, sigint_handler)
 
 
-signal.signal(signal.SIGINT, sigint_handler)
+    def menu():
+        print("""
+    \033[1;91m[*] Default Scan Types \033[1;m
+    [1] ~ Default Scan
+    [2] ~ Host Discovery
+    [3] ~ Port(SYN) Scan
+    [4] ~ Port(TCP) Scan
+    [5] ~ Port(UDP) Scan
+    [6] ~ Null scan (-sN)
+    [7] ~ FIN scan (-sF)
+    [8] ~ OS Analysis and Version Discovery
+    [9] ~ Nmap Script Engineering (default)
+    \033[1;91m[*] Firewall Bypass \033[1;m
+    [10] ~ Script Bypass (--script=firewall-bypass)
+    [11] ~ Data Length (--data-length <number> )
+    [12] ~ Smash (-ff)
+    \033[1;91m[*] Vulnerability Scanning \033[1;m
+    [13] ~ Default Vuln Scan (--script vuln)
+    [14] ~ FTP Vuln Scan
+    [15] ~ SMB Vuln Scan
+    [16] ~ HTTP Vuln Scan
+    [17] ~ SQL Injection Vuln Scan
+    [18] ~ Stored XSS Vuln Scan
+    [19] ~ Dom Based XSS vuln Scan
+    \033[1;91m[*] Subdomain Scanning \033[1;m
+    [20] ~ DNS Brute-force Hostnames
+    [21] ~ Subdomain/hostmap-crtsh
+    \033[1;91m[*] Other \033[1;m
+    [22] ~ Whois
+    [0] ~ Exit
+    """)
 
 
-def menu():
-    print("""
-\033[1;91m[*] Default Scan Types \033[1;m
-[1] ~ Default Scan
-[2] ~ Host Discovery
-[3] ~ Port(SYN) Scan
-[4] ~ Port(TCP) Scan
-[5] ~ Port(UDP) Scan
-[6] ~ Null scan (-sN)
-[7] ~ FIN scan (-sF)
-[8] ~ OS Analysis and Version Discovery
-[9] ~ Nmap Script Engineering (default)
-\033[1;91m[*] Firewall Bypass \033[1;m
-[10] ~ Script Bypass (--script=firewall-bypass)
-[11] ~ Data Length (--data-length <number> )
-[12] ~ Smash (-ff)
-\033[1;91m[*] Vulnerability Scanning \033[1;m
-[13] ~ Default Vuln Scan (--script vuln)
-[14] ~ FTP Vuln Scan
-[15] ~ SMB Vuln Scan
-[16] ~ HTTP Vuln Scan
-[17] ~ SQL Injection Vuln Scan
-[18] ~ Stored XSS Vuln Scan
-[19] ~ Dom Based XSS vuln Scan
-\033[1;91m[*] Subdomain Scanning \033[1;m
-[20] ~ DNS Brute-force Hostnames
-[21] ~ Subdomain/hostmap-crtsh
-\033[1;91m[*] Other \033[1;m
-[22] ~ Whois
-[0] ~ Exit
-""")
-
-
-def main():
     def mainLogic():
         
         menu()
@@ -143,7 +142,7 @@ def main():
                     os.system("nmap -vv -Pn --top-ports=" + topport2 + " " + option2 + " -oN HostD-" + option2 + "-output")
             
             menu1()
-    
+
         if user_input == "3":
             print("\n[*] Starting Port(SYN) Scan...\n")
             time.sleep(1)
@@ -165,7 +164,7 @@ def main():
                     os.system("nmap -vv -sS --top-ports=" + topport3 + " " + option3 + " -oN " + option3 + "-output")
         
             menu1()
-    
+
         if user_input == "4":
             print("\n[*] Starting Port(TCP) Scan...\n")
             time.sleep(1)
@@ -188,7 +187,7 @@ def main():
                     os.system("nmap -vv –sT --top-ports=" + topport4 + " " + option4 + " -oN TcpScan-" + option4 + "-output")
         
             menu1()
-    
+
         if user_input == "5":
             print("[*] Starting Port(UDP) Scan...")
             time.sleep(1)
@@ -525,7 +524,7 @@ def main():
                     os.system("nmap -vv -sV -ff -Pn --top-ports=" + topport19 + " --script=http-dombased-xss.nse " + option19 + " -oN "+"DomBasedXSSvuln-" + option19 + "-output" )
         
             menu1()
-    
+
         if user_input == "20":
             print("[*] Starting DNS Brute-force Hostnames...")
             time.sleep(1)
@@ -610,4 +609,4 @@ def main():
             
     root_control()
     
-main()
+nmap_script()
