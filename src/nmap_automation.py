@@ -608,5 +608,7 @@ _\( )/_            /(_)\      .--'/()\'--.
             sys.exit()
             
     root_control()
+
+if __name__ == "__main__":
+    nmap_script()
     
-nmap_script()

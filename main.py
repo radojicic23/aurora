@@ -38,4 +38,3 @@ try:
         nmap_script()
 except KeyboardInterrupt:
     print("\n\n[*] Exiting...")
-    
