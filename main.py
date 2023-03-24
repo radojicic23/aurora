@@ -22,7 +22,7 @@ _\( )/_            /(_)\      .--'/()\'--.
 
 print('-' * 52)
 print("[*] ~ 1. Discover all devices on your network.")
-print("[*] ~ 3. NMAP Automation tool.")
+print("[*] ~ 2. NMAP Automation tool.")
 print('-' * 52)
 
 try:
