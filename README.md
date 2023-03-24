@@ -1,6 +1,8 @@
 # Aurora🕸️
 
-- Description: Aurora is Linux Penetration Testing Tool for Scanning Networks.
+- Description: Aurora is Linux Penetration Testing Tool for Scanning Networks. 
+               First script is to discover all devices on your network.
+               Second script is automation script for NMAP (tool for network discovery and security auditing).
 
 ## Requirements
 - Python 3.x
