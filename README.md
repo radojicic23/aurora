@@ -1,4 +1,5 @@
 # Aurora🕸️
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 - Description: Aurora is Linux Penetration Testing Tool for Scanning Networks. 
                First script is to discover all devices on your network.
